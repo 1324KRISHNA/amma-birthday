@@ -335,6 +335,73 @@ img{max-width:100%;height:auto}
   }
 }
 
+
+/* MOBILE PHOTO VISIBILITY FIX */
+@media (max-width: 700px) {
+  /* Show the complete hero/background artwork instead of heavily cropping it */
+  .hero {
+    background-size: 100% auto !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    background-color: #2b171f !important;
+    min-height: 100svh !important;
+    padding-top: min(68vw, 430px) !important;
+    align-items: flex-end !important;
+  }
+
+  /* Keep the text readable without hiding the photo */
+  .hero > div {
+    width: 100% !important;
+    background: linear-gradient(180deg, rgba(43,23,31,.08), rgba(43,23,31,.82)) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Keep every gallery image straight and consistently aligned on phones */
+  .gallery img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4 / 5 !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    transform: none !important;
+  }
+
+  /* The final mountain photo is shown fully instead of being cropped */
+  .gallery img:last-child {
+    object-fit: contain !important;
+    object-position: center center !important;
+    background: #f6eef1 !important;
+  }
+}
+
+</style><style>
+@media (max-width:700px){
+ .hero{
+   min-height:100svh!important;background-size:contain!important;
+   background-position:center top!important;background-repeat:no-repeat!important;
+   background-color:#291821!important;padding:0!important;
+   display:flex!important;align-items:flex-end!important;
+ }
+ .hero>div{
+   width:calc(100% - 28px)!important;margin:0 14px 18px!important;
+   padding:28px 20px!important;border-radius:28px!important;
+   background:linear-gradient(180deg,rgba(30,14,22,.12),rgba(30,14,22,.80))!important;
+   backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+ }
+ .modern-title{font-size:clamp(42px,13vw,66px)!important;line-height:.94!important}
+ .gallery{display:grid!important;grid-template-columns:1fr!important;gap:18px!important;
+   padding-left:16px!important;padding-right:16px!important}
+ .gallery img{
+   display:block!important;width:100%!important;height:auto!important;
+   aspect-ratio:4/5!important;object-fit:cover!important;object-position:50% 35%!important;
+   border-radius:26px!important;margin:0!important;transform:none!important;
+ }
+ .gallery img:last-child{
+   object-fit:cover!important;object-position:50% 18%!important;
+   background:transparent!important;
+ }
+}
 </style></head><body>
 
 <nav class="premium-nav">
